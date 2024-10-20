@@ -1,0 +1,25 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-image: url(green-grass.jpg);
+    background-size: cover;
+    color: white;
+}
+
+h1 {
+    color: goldenrod;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#message-el {
+    font-style: italic;
+}
