@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Codes</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Code:</h1>
+    
+    <pre><code id="codeBlock1"></code></pre>
+    <pre><code id="codeBlock2"></code></pre>
+
+    <script>
+        // Function to load and display the JS file content
+        function loadJSFile() {
+            fetch('practice.js')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('codeBlock1').textContent = data;
+                })
+                .catch(error => console.error('Error loading JS file:', error));
+            fetch('rock_paper_scissor.js')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('2').textContent = data;
+                })
+                .catch(error => console.error('Error loading JS file:', error));        
+        }
+
+        // Load the file on page load
+        window.onload = loadJSFile;
+    </script>
+</body>
+</html>
