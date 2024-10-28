@@ -1,3 +1,8 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"
+const firebaseConfig = {
+
+}
+const app = initializeApp(firebaseConfig)
 let myLeads = []
 let listItems = []
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
