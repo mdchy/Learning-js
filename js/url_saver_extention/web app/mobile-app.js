@@ -1,7 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"
-const firebaseConfig = {
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 
+const firebaseConfig = {
+    databaseURL: "https://url-saver-app-e0692-default-rtdb.asia-southeast1.firebasedatabase.app"
 }
+const database = getDatabase(app)
+console.log(firebaseConfig.databaseURL)
+
 const app = initializeApp(firebaseConfig)
 let myLeads = []
 let listItems = []
