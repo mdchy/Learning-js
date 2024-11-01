@@ -1,91 +1,11 @@
-var sunglassesOptions = {
-    models: [
-        {
-            name: "aviator",
-            price: 300,
-            thumbImg: "thumb-aviator.png",
-            cssClass: "frame-aviator",
-        },
-        {      
-            name: "half-frame",
-            price: 200,
-            thumbImg: "thumb-half-frame.png",
-            cssClass: "frame-half",
-        },
-        {
-            name: "round",  
-            price: 250,
-            thumbImg: "thumb-round.png",
-            cssClass: "frame-round",
-        },
-        {  
-            name: "wayfarer",
-            price: 250,
-            thumbImg: "thumb-wayfarer.png",
-            cssClass: "frame-wayfarer",
-        }],
-    lenses: [
-        {
-            color: "sepia",
-            price: 20,
-            cssClass: "color-sepia",
-        },
-        {
-            color: "rainbow",
-            price: 50,
-            cssClass: "color-rainbow",
-        },
-        {
-            color: "iridescent",
-            price: 30,
-            cssClass: "color-iridescent",
-        }],
-    frames: [
-        {
-            color: "charcoal",
-            price: 0,
-            cssClass: "color-charcoal",
-        },
-        {
-            color: "tan",
-            price: 0,
-            cssClass: "color-tan",
-        },
-        {
-            color: "rose",
-            price: 0,
-            cssClass: "color-rose",
-        },
-    ],
-}
+import { sunglassesOptions, sunglasses } from './products.js'
 
-var sunglasses = {
-    model: {
-        name: "aviator",
-        price: 300,
-        thumbImg: "./images/thumb-aviator.png",
-        cssClass: "frame-aviator",
-    },
-    lenses: {
-        color: "sepia",
-        price: 20,
-        cssClass: "color-sepia",
-    },
-    frame: {
-        color: "charcoal",
-        price: 0,
-        cssClass: "color-charcoal",
-    }     
-}
+const productDetailsEl = document.getElementById("productDetails")
+const productImage = document.getElementById("productImage")
+const productFrames = document.getElementsByClassName("product-image_frame")[0]
+const productLenses = document.getElementsByClassName("product-image_lenses")[0]
 
-
-
-var productDetailsEl = document.getElementById("productDetails")
-var productImage = document.getElementById("productImage")
-var productFrames = document.getElementsByClassName("product-image_frame")[0]
-var productLenses = document.getElementsByClassName("product-image_lenses")[0]
-
-var sunglassesNew = ''
+let sunglassesNew = ''
 
 function setSunglasses(sunglassesNew = sunglasses) {
     return sunglassesNew
@@ -111,7 +31,7 @@ function render(sunglassesNew) {
             cssClass: sunglassesNew.frame.cssClass,
         }     
     }
-    var price = "$" + (sunglassesNew.model.price + sunglassesNew.lenses.price + sunglassesNew.frame.price)
+    let price = "$" + (sunglassesNew.model.price + sunglassesNew.lenses.price + sunglassesNew.frame.price)
     
   
     productDetailsEl.innerHTML = 
@@ -119,13 +39,13 @@ function render(sunglassesNew) {
     "<p>Custom: "  + sunglassesNew.lenses.color + " lenses, " + sunglassesNew.frame.color + " frames</p>" +
     "<p>" + price + "</p>"
     
-    var currClass = productImage.classList[1]
+    let currClass = productImage.classList[1]
     productImage.classList.replace(currClass, sunglassesNew.model.cssClass)
     
-    var currFramesClass = productFrames.classList[1]
+    let currFramesClass = productFrames.classList[1]
     productFrames.classList.replace(currFramesClass, sunglassesNew.frame.cssClass)
     
-    var currLensesClass = productLenses.classList[1]
+    let currLensesClass = productLenses.classList[1]
     productLenses.classList.replace(currLensesClass, sunglassesNew.lenses.cssClass)
     
 }
